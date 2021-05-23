@@ -19,6 +19,9 @@
 		A80B8BEC265A4FF900904012 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B8BEB265A4FF900904012 /* SearchResults.swift */; };
 		A80B8BF1265A68BC00904012 /* SearchPlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B8BF0265A68BC00904012 /* SearchPlaceHolderView.swift */; };
 		A80B8BF5265A6F7200904012 /* ProgressAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B8BF4265A6F7200904012 /* ProgressAnimation.swift */; };
+		A80B8BFA265A968700904012 /* TimeSeriesMounthlyAdjusted.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B8BF9265A968700904012 /* TimeSeriesMounthlyAdjusted.swift */; };
+		A80B8BFD265ABB5900904012 /* CalculatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B8BFC265ABB5900904012 /* CalculatorTableViewController.swift */; };
+		A80B8C00265ABCB300904012 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B8BFF265ABCB300904012 /* Asset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		A80B8BEB265A4FF900904012 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		A80B8BF0265A68BC00904012 /* SearchPlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceHolderView.swift; sourceTree = "<group>"; };
 		A80B8BF4265A6F7200904012 /* ProgressAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressAnimation.swift; sourceTree = "<group>"; };
+		A80B8BF9265A968700904012 /* TimeSeriesMounthlyAdjusted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeriesMounthlyAdjusted.swift; sourceTree = "<group>"; };
+		A80B8BFC265ABB5900904012 /* CalculatorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTableViewController.swift; sourceTree = "<group>"; };
+		A80B8BFF265ABCB300904012 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		CE56B120EEF8DF14F2B4595B /* Pods_CurrencyCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D31595A46D4BBFCE2218CEC2 /* Pods-CurrencyCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyCalculator.release.xcconfig"; path = "Target Support Files/Pods-CurrencyCalculator/Pods-CurrencyCalculator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,9 +103,7 @@
 				A80B8BE0265A4A9500904012 /* View */,
 				A80B8BC5265A423600904012 /* AppDelegate.swift */,
 				A80B8BC7265A423600904012 /* SceneDelegate.swift */,
-				A80B8BCB265A423600904012 /* Main.storyboard */,
 				A80B8BCE265A423800904012 /* Assets.xcassets */,
-				A80B8BD0265A423800904012 /* LaunchScreen.storyboard */,
 				A80B8BD3265A423800904012 /* Info.plist */,
 			);
 			path = CurrencyCalculator;
@@ -108,6 +112,8 @@
 		A80B8BE0265A4A9500904012 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A80B8BD0265A423800904012 /* LaunchScreen.storyboard */,
+				A80B8BCB265A423600904012 /* Main.storyboard */,
 				A80B8BE2265A4AD000904012 /* SearchTableViewCell.swift */,
 				A80B8BF0265A68BC00904012 /* SearchPlaceHolderView.swift */,
 			);
@@ -118,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				A80B8BC9265A423600904012 /* SearchTableViewController.swift */,
+				A80B8BFC265ABB5900904012 /* CalculatorTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -134,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				A80B8BEB265A4FF900904012 /* SearchResults.swift */,
+				A80B8BF9265A968700904012 /* TimeSeriesMounthlyAdjusted.swift */,
+				A80B8BFF265ABCB300904012 /* Asset.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,6 +271,9 @@
 			files = (
 				A80B8BCA265A423600904012 /* SearchTableViewController.swift in Sources */,
 				A80B8BE7265A4E4600904012 /* APIService.swift in Sources */,
+				A80B8BFA265A968700904012 /* TimeSeriesMounthlyAdjusted.swift in Sources */,
+				A80B8C00265ABCB300904012 /* Asset.swift in Sources */,
+				A80B8BFD265ABB5900904012 /* CalculatorTableViewController.swift in Sources */,
 				A80B8BF1265A68BC00904012 /* SearchPlaceHolderView.swift in Sources */,
 				A80B8BE3265A4AD000904012 /* SearchTableViewCell.swift in Sources */,
 				A80B8BC6265A423600904012 /* AppDelegate.swift in Sources */,

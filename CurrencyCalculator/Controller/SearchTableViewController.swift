@@ -53,6 +53,7 @@ class SearchTableViewController: UITableViewController,ProgressAnimation {
         $searchQuery
             .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
             .sink { [unowned self] (searchQuery) in
+                guard !searchQuery.isEmpty else {return}
                 showLoadingAnimation()
                 self.apiService.fetchResultsPublisher(keywords: searchQuery).sink { (completion) in
                    hideLoadingAnimation()
@@ -110,6 +111,36 @@ class SearchTableViewController: UITableViewController,ProgressAnimation {
         }
         
         return cell
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let searchResults = self.searchResults {
+            let searchResultData = searchResults.items[indexPath.row]
+            let symbol = searchResultData.symbol
+            handleSelection(for: symbol, searchData: searchResultData)
+        }
+    }
+    
+    private func handleSelection(for symbol:String,searchData : Searchresult){
+        apiService.fetchTimeSeriesMounthlyPublisher(keywords: symbol).sink { (completionResult) in
+            switch completionResult{
+            case.failure(let error):
+                print(error.localizedDescription)
+            case .finished :
+                break
+            }
+        } receiveValue: { [weak self](timeSeriesMounthlyAdjusted) in
+            
+            let asset = Asset(searchResult: searchData, timeSeriesMonthlyAdjusted: timeSeriesMounthlyAdjusted)
+            self?.performSegue(withIdentifier: "showCalculater", sender: asset)
+           
+        }.store(in: &subscribers)
+
+
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCalculater",let destination = segue.destination as? CalculatorTableViewController, let asset = sender as? Asset {
+            destination.asset = asset
+        }
     }
 }
 //MARK:UISearchResultUpdating Delegate and UISearchControllerDelegate
