@@ -118,10 +118,13 @@ class SearchTableViewController: UITableViewController,ProgressAnimation {
             let symbol = searchResultData.symbol
             handleSelection(for: symbol, searchData: searchResultData)
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     private func handleSelection(for symbol:String,searchData : Searchresult){
-        apiService.fetchTimeSeriesMounthlyPublisher(keywords: symbol).sink { (completionResult) in
+        showLoadingAnimation()
+        apiService.fetchTimeSeriesMounthlyPublisher(keywords: symbol).sink { [weak self](completionResult) in
+            self?.hideLoadingAnimation()
             switch completionResult{
             case.failure(let error):
                 print(error.localizedDescription)
@@ -129,7 +132,7 @@ class SearchTableViewController: UITableViewController,ProgressAnimation {
                 break
             }
         } receiveValue: { [weak self](timeSeriesMounthlyAdjusted) in
-            
+            self?.hideLoadingAnimation()
             let asset = Asset(searchResult: searchData, timeSeriesMonthlyAdjusted: timeSeriesMounthlyAdjusted)
             self?.performSegue(withIdentifier: "showCalculater", sender: asset)
            

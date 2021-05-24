@@ -22,6 +22,11 @@
 		A80B8BFA265A968700904012 /* TimeSeriesMounthlyAdjusted.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B8BF9265A968700904012 /* TimeSeriesMounthlyAdjusted.swift */; };
 		A80B8BFD265ABB5900904012 /* CalculatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B8BFC265ABB5900904012 /* CalculatorTableViewController.swift */; };
 		A80B8C00265ABCB300904012 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B8BFF265ABCB300904012 /* Asset.swift */; };
+		A80B8C04265AD5A300904012 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B8C03265AD5A300904012 /* String+Extension.swift */; };
+		A81EB467265BAA97004096CE /* TextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81EB466265BAA97004096CE /* TextField+Extensions.swift */; };
+		A81EB46A265BB30F004096CE /* DateSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81EB469265BB30F004096CE /* DateSelectionTableViewController.swift */; };
+		A81EB46D265BB378004096CE /* DateSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81EB46C265BB378004096CE /* DateSelectionTableViewCell.swift */; };
+		A81EB473265BBE0C004096CE /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81EB472265BBE0C004096CE /* Date+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,11 @@
 		A80B8BF9265A968700904012 /* TimeSeriesMounthlyAdjusted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeriesMounthlyAdjusted.swift; sourceTree = "<group>"; };
 		A80B8BFC265ABB5900904012 /* CalculatorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTableViewController.swift; sourceTree = "<group>"; };
 		A80B8BFF265ABCB300904012 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		A80B8C03265AD5A300904012 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		A81EB466265BAA97004096CE /* TextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extensions.swift"; sourceTree = "<group>"; };
+		A81EB469265BB30F004096CE /* DateSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionTableViewController.swift; sourceTree = "<group>"; };
+		A81EB46C265BB378004096CE /* DateSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		A81EB472265BBE0C004096CE /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		CE56B120EEF8DF14F2B4595B /* Pods_CurrencyCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D31595A46D4BBFCE2218CEC2 /* Pods-CurrencyCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyCalculator.release.xcconfig"; path = "Target Support Files/Pods-CurrencyCalculator/Pods-CurrencyCalculator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +106,7 @@
 		A80B8BC4265A423600904012 /* CurrencyCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				A80B8C02265AD59400904012 /* Extension */,
 				A80B8BF3265A6F6000904012 /* ProgressCircle */,
 				A80B8BEA265A4FDA00904012 /* Model */,
 				A80B8BE5265A4E2D00904012 /* Service */,
@@ -116,6 +127,7 @@
 				A80B8BCB265A423600904012 /* Main.storyboard */,
 				A80B8BE2265A4AD000904012 /* SearchTableViewCell.swift */,
 				A80B8BF0265A68BC00904012 /* SearchPlaceHolderView.swift */,
+				A81EB46C265BB378004096CE /* DateSelectionTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -125,6 +137,7 @@
 			children = (
 				A80B8BC9265A423600904012 /* SearchTableViewController.swift */,
 				A80B8BFC265ABB5900904012 /* CalculatorTableViewController.swift */,
+				A81EB469265BB30F004096CE /* DateSelectionTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -153,6 +166,16 @@
 				A80B8BF4265A6F7200904012 /* ProgressAnimation.swift */,
 			);
 			path = ProgressCircle;
+			sourceTree = "<group>";
+		};
+		A80B8C02265AD59400904012 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A80B8C03265AD5A300904012 /* String+Extension.swift */,
+				A81EB466265BAA97004096CE /* TextField+Extensions.swift */,
+				A81EB472265BBE0C004096CE /* Date+Extensions.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,14 +292,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A81EB46A265BB30F004096CE /* DateSelectionTableViewController.swift in Sources */,
 				A80B8BCA265A423600904012 /* SearchTableViewController.swift in Sources */,
 				A80B8BE7265A4E4600904012 /* APIService.swift in Sources */,
 				A80B8BFA265A968700904012 /* TimeSeriesMounthlyAdjusted.swift in Sources */,
 				A80B8C00265ABCB300904012 /* Asset.swift in Sources */,
+				A80B8C04265AD5A300904012 /* String+Extension.swift in Sources */,
 				A80B8BFD265ABB5900904012 /* CalculatorTableViewController.swift in Sources */,
+				A81EB467265BAA97004096CE /* TextField+Extensions.swift in Sources */,
 				A80B8BF1265A68BC00904012 /* SearchPlaceHolderView.swift in Sources */,
+				A81EB473265BBE0C004096CE /* Date+Extensions.swift in Sources */,
 				A80B8BE3265A4AD000904012 /* SearchTableViewCell.swift in Sources */,
 				A80B8BC6265A423600904012 /* AppDelegate.swift in Sources */,
+				A81EB46D265BB378004096CE /* DateSelectionTableViewCell.swift in Sources */,
 				A80B8BEC265A4FF900904012 /* SearchResults.swift in Sources */,
 				A80B8BC8265A423600904012 /* SceneDelegate.swift in Sources */,
 				A80B8BF5265A6F7200904012 /* ProgressAnimation.swift in Sources */,
