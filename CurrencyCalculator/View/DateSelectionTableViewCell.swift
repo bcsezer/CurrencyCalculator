@@ -14,9 +14,11 @@ class DateSelectionTableViewCell: UITableViewCell {
     
   
     
-    func configureCells(with monthInfo:MonthInfo,index:Int){
+    func configureCells(with monthInfo:MonthInfo,index:Int, isSelected:Bool){
       
+        
         dateLAbel.text = monthInfo.date.MMYYFormat
+        accessoryType = isSelected ? .checkmark : .none
         
         if index == 1{
             monthsAgoLAbel.text = "1 Months Ago"

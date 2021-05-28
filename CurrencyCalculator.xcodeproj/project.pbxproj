@@ -27,6 +27,7 @@
 		A81EB46A265BB30F004096CE /* DateSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81EB469265BB30F004096CE /* DateSelectionTableViewController.swift */; };
 		A81EB46D265BB378004096CE /* DateSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81EB46C265BB378004096CE /* DateSelectionTableViewCell.swift */; };
 		A81EB473265BBE0C004096CE /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81EB472265BBE0C004096CE /* Date+Extensions.swift */; };
+		A81EB476265E60E4004096CE /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81EB475265E60E4004096CE /* Int+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		A81EB469265BB30F004096CE /* DateSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionTableViewController.swift; sourceTree = "<group>"; };
 		A81EB46C265BB378004096CE /* DateSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		A81EB472265BBE0C004096CE /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		A81EB475265E60E4004096CE /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		CE56B120EEF8DF14F2B4595B /* Pods_CurrencyCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D31595A46D4BBFCE2218CEC2 /* Pods-CurrencyCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyCalculator.release.xcconfig"; path = "Target Support Files/Pods-CurrencyCalculator/Pods-CurrencyCalculator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +176,7 @@
 				A80B8C03265AD5A300904012 /* String+Extension.swift */,
 				A81EB466265BAA97004096CE /* TextField+Extensions.swift */,
 				A81EB472265BBE0C004096CE /* Date+Extensions.swift */,
+				A81EB475265E60E4004096CE /* Int+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				A81EB46A265BB30F004096CE /* DateSelectionTableViewController.swift in Sources */,
 				A80B8BCA265A423600904012 /* SearchTableViewController.swift in Sources */,
 				A80B8BE7265A4E4600904012 /* APIService.swift in Sources */,
+				A81EB476265E60E4004096CE /* Int+Extensions.swift in Sources */,
 				A80B8BFA265A968700904012 /* TimeSeriesMounthlyAdjusted.swift in Sources */,
 				A80B8C00265ABCB300904012 /* Asset.swift in Sources */,
 				A80B8C04265AD5A300904012 /* String+Extension.swift in Sources */,

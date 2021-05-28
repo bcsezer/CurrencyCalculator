@@ -10,6 +10,9 @@ import UIKit
 class DateSelectionTableViewController: UITableViewController {
     var timeSeriesMonthlyAdjusted : TimeSeriesMounthlyAdjusted?
     
+    
+    var selectedIndex:Int?
+    
    private var monthInfos : [MonthInfo] = []
     var didSelectDate : ((Int) -> Void)?
     
@@ -39,10 +42,12 @@ extension DateSelectionTableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DateSelectionTableViewCell", for: indexPath) as! DateSelectionTableViewCell
+        
         let index = indexPath.row
         let monthInfoData = monthInfos[index]
+        let isSelected =  index == selectedIndex
         
-        cell.configureCells(with: monthInfoData, index: index)
+        cell.configureCells(with: monthInfoData, index: index, isSelected: isSelected)
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
