@@ -28,6 +28,9 @@
 		A81EB46D265BB378004096CE /* DateSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81EB46C265BB378004096CE /* DateSelectionTableViewCell.swift */; };
 		A81EB473265BBE0C004096CE /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81EB472265BBE0C004096CE /* Date+Extensions.swift */; };
 		A81EB476265E60E4004096CE /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81EB475265E60E4004096CE /* Int+Extensions.swift */; };
+		A81EB47926621CC3004096CE /* DCAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81EB47826621CC3004096CE /* DCAService.swift */; };
+		A81EB47D26622076004096CE /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81EB47C26622076004096CE /* Double+Extensions.swift */; };
+		A81EB4802662B990004096CE /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81EB47F2662B990004096CE /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		A81EB46C265BB378004096CE /* DateSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		A81EB472265BBE0C004096CE /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		A81EB475265E60E4004096CE /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		A81EB47826621CC3004096CE /* DCAService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCAService.swift; sourceTree = "<group>"; };
+		A81EB47C26622076004096CE /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		A81EB47F2662B990004096CE /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		CE56B120EEF8DF14F2B4595B /* Pods_CurrencyCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D31595A46D4BBFCE2218CEC2 /* Pods-CurrencyCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyCalculator.release.xcconfig"; path = "Target Support Files/Pods-CurrencyCalculator/Pods-CurrencyCalculator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				A80B8BE6265A4E4600904012 /* APIService.swift */,
+				A81EB47826621CC3004096CE /* DCAService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -177,6 +184,8 @@
 				A81EB466265BAA97004096CE /* TextField+Extensions.swift */,
 				A81EB472265BBE0C004096CE /* Date+Extensions.swift */,
 				A81EB475265E60E4004096CE /* Int+Extensions.swift */,
+				A81EB47C26622076004096CE /* Double+Extensions.swift */,
+				A81EB47F2662B990004096CE /* UIColor+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -306,7 +315,10 @@
 				A81EB467265BAA97004096CE /* TextField+Extensions.swift in Sources */,
 				A80B8BF1265A68BC00904012 /* SearchPlaceHolderView.swift in Sources */,
 				A81EB473265BBE0C004096CE /* Date+Extensions.swift in Sources */,
+				A81EB4802662B990004096CE /* UIColor+Extensions.swift in Sources */,
 				A80B8BE3265A4AD000904012 /* SearchTableViewCell.swift in Sources */,
+				A81EB47926621CC3004096CE /* DCAService.swift in Sources */,
+				A81EB47D26622076004096CE /* Double+Extensions.swift in Sources */,
 				A80B8BC6265A423600904012 /* AppDelegate.swift in Sources */,
 				A81EB46D265BB378004096CE /* DateSelectionTableViewCell.swift in Sources */,
 				A80B8BEC265A4FF900904012 /* SearchResults.swift in Sources */,

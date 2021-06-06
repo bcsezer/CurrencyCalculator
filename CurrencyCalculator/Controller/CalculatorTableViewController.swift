@@ -9,6 +9,11 @@ import UIKit
 import Combine
 
 class CalculatorTableViewController: UITableViewController {
+    @IBOutlet weak var currentValueLabel: UILabel!
+    @IBOutlet weak var investmentAmountLabel:UILabel!
+    @IBOutlet weak var gainLabel:UILabel!
+    @IBOutlet weak var yieldLabel:UILabel!
+    @IBOutlet weak var annualReturnLabel:UILabel!
     
     @IBOutlet weak var initialInvestmentAmountTextField:UITextField!
     @IBOutlet weak var monthlyDolarCostAveragingTextField:UITextField!
@@ -25,16 +30,25 @@ class CalculatorTableViewController: UITableViewController {
     
     private var subscribers = Set<AnyCancellable>()
     
+    private let dcaService = DCAService()
+    
     @IBOutlet weak var dateSlider: UISlider!
     
     var asset : Asset?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        resetViews()
         setupViews()
         setupTextViews()
         setupDateSlider()
         observeForm()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        initialInvestmentAmountTextField.becomeFirstResponder()
+        
     }
     private func setupTextViews(){
         initialInvestmentAmountTextField.addDoneButton()
@@ -48,6 +62,7 @@ class CalculatorTableViewController: UITableViewController {
         }
     }
     private func setupViews(){
+        navigationItem.title = asset?.searchResult.symbol
         symbolLabel.text = asset?.searchResult.symbol
         assetNameLabel.text = asset?.searchResult.name
         investingAmountCurrency.text = asset?.searchResult.currency
@@ -81,8 +96,29 @@ class CalculatorTableViewController: UITableViewController {
         }.store(in: &subscribers)
         
         Publishers.CombineLatest3($initialInvestmentAmount, $monthlyDolarCostAveragingAmount, $initialDateOfInvestmentIndex)
-            .sink { (initialInvestmentAmount,monthlyDolarCostAveragingAmount,initialDateOfInvestmentIndex ) in
+            .sink {[weak self] (initialInvestmentAmount,monthlyDolarCostAveragingAmount,initialDateOfInvestmentIndex ) in
+                guard let initialInvestmentAmount = initialInvestmentAmount,
+                      let monthlyDolarCostAveragingAmount = monthlyDolarCostAveragingAmount,
+                      let initialDateOfInvestmentIndex = initialDateOfInvestmentIndex,
+                      let asset = self?.asset    else {return}
                 
+                
+                let result = self?.dcaService.calculate(asset: asset, initialInvestmentAmount: initialInvestmentAmount.doubleValue,
+                                                        MonthlyDolarCoastAverageAmount: monthlyDolarCostAveragingAmount.doubleValue,
+                                                        initialDayOfInvestmentIndex: initialDateOfInvestmentIndex)
+                
+                let isProfitable = (result?.isProfitable == true)
+                let gainSymbol = isProfitable ? "+":""
+                
+                
+                self?.currentValueLabel.textColor = (isProfitable) ? #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1) : #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+                self?.currentValueLabel.text = result?.currentValue.currencyFormat
+                self?.investmentAmountLabel.text = result?.investmentAmount.currencyFormat
+                self?.gainLabel.text = result?.gaing.toCurrencyFormat(hasDollarSymbol: false, hasDecimalPlaces: false).prefix(withText: gainSymbol)
+                self?.yieldLabel.text = result?.yield.percentageFormat.prefix(withText: gainSymbol).addBrackets()
+                self?.yieldLabel.textColor = isProfitable ? .systemGreen : .systemRed
+                self?.annualReturnLabel.text = result?.annualReturn.percentageFormat
+                self?.annualReturnLabel.textColor = (isProfitable) ? #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1) : #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
             }.store(in: &subscribers)
         
     }
@@ -105,6 +141,14 @@ class CalculatorTableViewController: UITableViewController {
             let dateString = monthInfo.date.MMYYFormat
             initialDateOfInvestment.text = dateString
         }
+    }
+    private func resetViews(){
+        currentValueLabel.text = "0.00"
+        investmentAmountLabel.text = "0.00"
+        gainLabel.text = "-"
+        yieldLabel.text = "-"
+        annualReturnLabel.text = "-"
+        
     }
     
     @IBAction func dateSliderDidChange(_ sender: UISlider) {

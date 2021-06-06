@@ -135,6 +135,7 @@ class SearchTableViewController: UITableViewController,ProgressAnimation {
             self?.hideLoadingAnimation()
             let asset = Asset(searchResult: searchData, timeSeriesMonthlyAdjusted: timeSeriesMounthlyAdjusted)
             self?.performSegue(withIdentifier: "showCalculater", sender: asset)
+            self?.searchController.searchBar.text = nil
            
         }.store(in: &subscribers)
 

@@ -276,6 +276,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="39" id="lZo-Le-7gQ"/>
                                                                     </constraints>
+                                                                    <color key="textColor" systemColor="linkColor"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                 </textField>
@@ -309,6 +310,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="39" id="DEp-Ix-h6d"/>
                                                                     </constraints>
+                                                                    <color key="textColor" systemColor="linkColor"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                 </textField>
@@ -342,6 +344,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="39" id="9bZ-1J-HNF"/>
                                                                     </constraints>
+                                                                    <color key="textColor" systemColor="linkColor"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
@@ -392,13 +395,18 @@
                     </tableView>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="ORS-aQ-hYH"/>
                     <connections>
+                        <outlet property="annualReturnLabel" destination="BOC-Bc-sRo" id="iuM-Vu-ncq"/>
                         <outlet property="assetNameLabel" destination="vgq-eO-zMF" id="ead-s4-RtE"/>
+                        <outlet property="currentValueLabel" destination="D0V-y0-M3i" id="9qa-c9-bjX"/>
                         <outlet property="dateSlider" destination="tFt-Zn-3sx" id="gPf-rS-Yi7"/>
+                        <outlet property="gainLabel" destination="aVa-Ko-bal" id="04W-xr-7hs"/>
                         <outlet property="initialDateOfInvestment" destination="lsc-bC-Lo7" id="4Cd-Lz-7jr"/>
                         <outlet property="initialInvestmentAmountTextField" destination="q7Y-w4-ZFq" id="dHk-TZ-0Oc"/>
                         <outlet property="investingAmountCurrency" destination="YZg-yD-02k" id="DqE-Kl-Vjw"/>
+                        <outlet property="investmentAmountLabel" destination="27w-BN-aRI" id="C8l-mT-N6R"/>
                         <outlet property="monthlyDolarCostAveragingTextField" destination="YSI-E1-AM1" id="gjM-cP-b9u"/>
                         <outlet property="symbolLabel" destination="Y3E-hE-WCy" id="yHc-U7-dBF"/>
+                        <outlet property="yieldLabel" destination="VIB-sT-bUw" id="GfY-iE-ccd"/>
                         <outletCollection property="currencyLabels" destination="WMk-xw-oze" collectionClass="NSMutableArray" id="bLU-HW-S4I"/>
                         <outletCollection property="currencyLabels" destination="RGe-2r-7lj" collectionClass="NSMutableArray" id="YOY-gi-bwl"/>
                         <outletCollection property="currencyLabels" destination="ICg-Eu-1Zo" collectionClass="NSMutableArray" id="2V3-OC-7Yr"/>
@@ -487,6 +495,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
