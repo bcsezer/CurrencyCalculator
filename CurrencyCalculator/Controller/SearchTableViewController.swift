@@ -68,6 +68,7 @@ class SearchTableViewController: UITableViewController,ProgressAnimation {
                 } receiveValue: { (searchResults) in
                     self.searchResults = searchResults
                     self.tableView.reloadData()
+                    self.tableView.isScrollEnabled = true
                 
                 }.store(in: &self.subscribers)
                 
@@ -97,6 +98,7 @@ class SearchTableViewController: UITableViewController,ProgressAnimation {
     }
     
     private func setupTableView(){
+        self.tableView.isScrollEnabled = false
         self.tableView.tableFooterView = UIView()
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

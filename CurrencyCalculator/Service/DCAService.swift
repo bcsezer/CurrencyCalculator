@@ -58,7 +58,7 @@ struct DCAService {
     
     private func getAnuualReturn(currentValue:Double , investmentAmount:Double, initialDayOfInvestmentIndex:Int) -> Double{
         let rate = currentValue / investmentAmount
-        let years = ((initialDayOfInvestmentIndex+1)/12).doubleValue
+        let years = (initialDayOfInvestmentIndex.doubleValue + 1)/12
         print("years : \(years)")
         
         return pow(rate, (1/years))-1
